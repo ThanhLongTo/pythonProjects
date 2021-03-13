@@ -77,7 +77,7 @@ class SkipWallpaper():
 
 		html = requests.get(url, headers=headers)
 		soup = BeautifulSoup(html.content, 'html.parser')
-		a = soup.find_all('a', class_='wallpapers__link')[1]['href']
+		a = soup.find_all('a', class_='wallpapers__link')[photo_select]['href']
 
 
 		detailedUrl = "https://wallpaperscraft.com{}".format(str(a))
