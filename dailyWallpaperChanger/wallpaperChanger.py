@@ -27,7 +27,7 @@ class ChangeWallpaper():
 
 	def unplash_wallpaper(self):
 		# Check if a day is passed or not, to set daily wallpaper
-		if (time_now-default_datetime).days >= 1:
+		if time_now > default_datetime:
 
 			url = "https://unsplash.com/s/photos/nature?orientation=landscape"
 			headers = {
@@ -87,7 +87,7 @@ class ChangeWallpaper():
 	def wallpaperCraft_wallpaper(self):
 		
 
-		if (time_now-default_datetime).days >= 1:
+		if time_now > default_datetime:
 
 			url = "https://wallpaperscraft.com/catalog/city/2048x1152"
 			headers = {
