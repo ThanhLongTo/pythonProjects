@@ -1,2 +1,4 @@
 # pythonProjects
-this is my some of my Python projects
+
+## **[1]** Daily wallpaper changer
+## **[2]** Auto typer
