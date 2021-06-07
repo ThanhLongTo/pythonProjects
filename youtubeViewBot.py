@@ -13,7 +13,7 @@ TABS = 3                #changes to yours
 TIMES_PER_VIDEO = 40    #change to yours
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36"  #change to yours
 CHROME_DRIVER_PATH = "C:\\Users\\PC\\Documents\\Coding workplace\\chromedriver_win32 (1)\\chromedriver.exe"  #change to yours
-YOUTUBE_URL = "https://www.youtube.com/watch?v=xSkSL3nxJwc&"
+YOUTUBE_URL = "https://www.youtube.com/watch?v=xSkSL3nxJwc&"  #change to yours
 
 
 for times in range(TIMES):
@@ -47,8 +47,4 @@ for times in range(TIMES):
 
     time.sleep(TIMES_PER_VIDEO)
     driver.quit()
-    time.sleep(1)
-    
-    
-
-    
+    time.sleep(1)   
