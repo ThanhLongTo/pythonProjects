@@ -24,21 +24,21 @@ class Wiki:
 
             for i in content:
                 for j in i.find_all("p"):
-                    if re.sub("\[\d+\]","",j.text) != "\n" or re.sub("\[\d+\]","",j.text) != "":
-                        data += re.sub("\[\d+\]","",j.text)
+                    if re.sub("\[.*\]","",j.text) != "\n" or re.sub("\[.*\]","",j.text) != "":
+                        data += re.sub("\[.*\]","",j.text)
             
             if self.sentence==None:
                 return data
             else:
-                return "".join(data.split(".")[:self.sentence])
+                return "".join(data.split(".")[:self.sentence]).replace("(listen)","")
         
         except AttributeError:
             return "Cannot find anything"
-        except Exception:
-            return "Some unexpected error"
+        except Exception as E:
+            return E
 
 
 if __name__ == "__main__":
-    # Thay thông tin và số câu ở dòng dưới để search, bỏ sentence nếu muốn tìm full trang
+    # Remove "sentence" for full page
     search = Wiki(input_search="Google", sentence=5)
     print(search.wiki())
