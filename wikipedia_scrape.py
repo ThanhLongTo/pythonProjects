@@ -4,7 +4,7 @@ import re
 
 
 class Wiki:
-    def __init__(self, input_search, sentence):
+    def __init__(self, input_search, sentence=None):
         self.input_search = input_search
         self.sentence = sentence
     
@@ -27,7 +27,10 @@ class Wiki:
                     if re.sub("\[\d+\]","",j.text) != "\n" or re.sub("\[\d+\]","",j.text) != "":
                         data += re.sub("\[\d+\]","",j.text)
             
-            return "".join(data.split(".")[:self.sentence])
+            if self.sentence==None:
+                return data
+            else:
+                return "".join(data.split(".")[:self.sentence])
         
         except AttributeError:
             return "Cannot find anything"
@@ -36,7 +39,6 @@ class Wiki:
 
 
 if __name__ == "__main__":
-    # Thay thông tin và số câu ở dòng dưới để search
-    search = Wiki(input_search="Viet Nam", sentence=5)
+    # Thay thông tin và số câu ở dòng dưới để search, bỏ sentence nếu muốn tìm full trang
+    search = Wiki(input_search="Google", sentence=5)
     print(search.wiki())
-
